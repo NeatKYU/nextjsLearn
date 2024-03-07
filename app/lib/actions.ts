@@ -62,9 +62,9 @@ export async function createInvoice(prevState: State, formData: FormData) {
   }
 
   // remove cache
-  revalidatePath('/ui/dashboard/invoices');
+  revalidatePath('/dashboard/invoices');
   // redirect page
-  redirect('/ui/dashboard/invoices');
+  redirect('/dashboard/invoices');
 }
 
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
@@ -100,8 +100,8 @@ export async function updateInvoice(
     return { message: 'Failed to Update invoice' };
   }
 
-  revalidatePath('/ui/dashboard/invoices');
-  redirect('/ui/dashboard/invoices');
+  revalidatePath('/dashboard/invoices');
+  redirect('/dashboard/invoices');
 }
 
 export async function deleteInvoice(id: string) {
@@ -110,7 +110,7 @@ export async function deleteInvoice(id: string) {
   } catch (error) {
     return { message: 'Failed to Delete invoice' };
   }
-  revalidatePath('/ui/dashboard/invoices');
+  revalidatePath('/dashboard/invoices');
 }
 
 export async function authenticate(
